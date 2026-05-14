@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPro - E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <section id="screen-welcome" class="screen-welcome">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="welcome-container">
+            <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+            <h1>Tech<span>Pro</span></h1>
+            <div class="welcome-card">
+                <h2>O futuro é agora.</h2>
+                <p>Sua loja de eletrônicos premium com um toque de inteligência.</p>
+                <button class="btn-start" onclick="changeScreen('screen-home')">
+                    Iniciar <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <header id="app-header" class="hidden">
+        <div class="header-content">
+            <span class="logo-small">Tech<span>Pro</span></span>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <section id="screen-home" class="screen hidden">
+        <div class="search-bar">
+            <input type="text" placeholder="O que você procura hoje?">
+        </div>
+        <h3 class="section-title">Destaques</h3>
+        <div class="product-grid" id="product-list">
+            </div>
+    </section>
+
+    <section id="screen-cart" class="screen hidden">
+        <h3 class="section-title">Seu Carrinho</h3>
+        <div id="cart-items-container">
+            </div>
+        <div class="summary-card">
+            <div class="total-row">
+                <span>Total:</span>
+                <strong id="total-price">R$ 0,00</strong>
+            </div>
+            <button class="btn-action" onclick="changeScreen('screen-payment')">Prosseguir para Pagamento</button>
+        </div>
+    </section>
+
+    <section id="screen-payment" class="screen hidden">
+        <h3 class="section-title">Pagamento</h3>
+        <div class="payment-methods">
+            <label class="pay-card">
+                <input type="radio" name="pay" checked>
+                <div class="pay-info"><i class="fas fa-pix"></i> Pix (Instantâneo)</div>
+            </label>
+            <label class="pay-card">
+                <input type="radio" name="pay">
+                <div class="pay-info"><i class="fas fa-credit-card"></i> Cartão de Crédito</div>
+            </label>
+        </div>
+        <button class="btn-action" onclick="changeScreen('screen-finish')">Finalizar Compra</button>
+    </section>
+
+    <section id="screen-finish" class="screen hidden">
+        <div class="success-container">
+            <i class="fas fa-check-circle pulse"></i>
+            <h2>Pedido Recebido!</h2>
+            <p>Em breve você receberá os detalhes no seu e-mail.</p>
+            <button class="btn-action" onclick="location.reload()">Voltar ao Início</button>
+        </div>
+    </section>
+
+    <nav id="bottom-nav" class="bottom-nav hidden">
+        <div class="nav-item" onclick="changeScreen('screen-home')"><i class="fas fa-home"></i></div>
+        <div class="nav-item" onclick="changeScreen('screen-cart')">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count" class="badge">0</span>
+        </div>
+        <div class="nav-item"><i class="fas fa-heart"></i></div>
+        <div class="nav-item"><i class="fas fa-cog"></i></div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
